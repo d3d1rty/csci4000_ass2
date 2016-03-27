@@ -1,0 +1,38 @@
+<!-- Richard Davis
+     CSCI4000
+     24 Mar 2016
+-->
+<!DOCTYPE html>
+  <head>
+   <meta charset="UTF-8">
+   <title>Richard Davis's Employee Net Pay</title> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Richard Davis's Employee Net Pay</h1>
+    </header>
+    <section>
+      <h3>This page will prompt Richard Davis to calculate an employee's net pay.</h3>
+      <p>Please enter:</p>
+      <ul>
+        <li>Employee's hourly rate of pay;</li>
+        <li>Number of hours worked that week;</li>
+        <li>Number of dependents employee has.</li>
+      </ul>
+      <h4>Please enter:</h4>
+      <form action="index_process.php" method="get">
+        <label>Employee's hourly rate of pay:</label>
+        <input type="text" name="pay_rate">
+        <p>dollars per hour</p><br>
+        <label>Number of hours worked that week:</label>
+        <input type="text" name="hours">
+        <p>hours</p><br>
+        <label>Number of dependents employee has:</label>
+        <input type="text" name="dependents">
+        <p>dependents</p><br>
+        <input type="submit" value="Submit"><br>
+      </form>
+    </section>
+  </body>
+</html>
