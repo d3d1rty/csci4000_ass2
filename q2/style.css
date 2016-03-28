@@ -48,28 +48,6 @@ p {
   font: 105% Georgia, serif;
   color: #0f0a01;
 }
-ul li {
-  font: 105% Georgia, serif;
-  color: #0f0a01;
-}
-label {
-  color: #71dac0;
-  font: 105% Georgia, serif;
-  width: 18em;
-  padding-right: 1em;
-  float: left;
-}
-input[type="text"] {
-  font: 110% Georgia, serif;
-  color: #0f0a01;
-  float: left;
-  width: 10em;
-  margin-bottom: .5em;
-}
-form p {
-  text-indent: 2em;
-  float:left;
-}
 input[type="submit"] {
   font: 110% Georgia, serif;
   color: #0f0a01;
@@ -82,12 +60,4 @@ br {
 a {
   font: 110% Georgia, serif;
   color: #71dac0;
-}
-#descriptions {
-  width: 20em;
-  float: left;
-}
-#results {
-  width: 15em;
-  float: left;
 }
