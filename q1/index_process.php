@@ -1,9 +1,41 @@
-<!--
-     Richard Davis
-     CSCI4000
-     24 Mar 2016
--->
+<?php
+  // get data from form
+  $hours = $_GET['hours'];
+  $pay_rate = $_GET['pay_rate'];
+  $dependents = $_GET['dependents'];
+
+  // calculate gross pay
+  if ($hours > 40) {
+    $over_hours = $hours - 40;
+    $overtime = $over_hours * $pay_rate * 1.5;
+    $normal_pay = 40 * $pay_rate;
+    $gross = $normal_pay + $overtime;
+  } else {
+    $overhours = 0;
+    $overtime = 0;
+    $gross = $hours*$pay_rate;
+  }
+
+  // determine tax rate
+  if ($dependents < 1) {
+    $tax_rate = .28;
+  } elseif ($dependents > 0 && $dependents < 4) {
+    $tax_rate = .25;
+  } elseif ($dependents > 3 && $dependents < 7) {
+    $tax_rate = .15;
+  } else {
+    $tax_rate = .1;
+  }
+
+  // calculate net pay
+?>
 <!DOCTYPE html>
+<!--
+    Richard Davis
+    CSCI4000
+    24 Mar 2016
+    Assignment 2
+-->
   <head>
     <meta charset="UTF-8">
     <title>Richard Davis's Employee Net Pay</title>
@@ -30,9 +62,9 @@
         <p>This employee earned:</p>
       </div>
       <div id="results">
-        <p>Filler</p>
-        <p>Filler</p>
-        <p>Filler</p>
+        <p><?php echo htmlspecialchars($pay_rate); ?></p>
+        <p><?php echo htmlspecialchars($hours); ?></p>
+        <p><?php echo htmlspecialchars($dependents); ?></p>
         <p>Filler</p>
         <p>Filler</p>
         <p>Filler</p>
