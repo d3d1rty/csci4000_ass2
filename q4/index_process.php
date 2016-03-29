@@ -1,12 +1,11 @@
 <?php
   // Richard Davis
   // CSCI4000
-  // 24 Mar 2016
+  // 26 Mar 2016
   // Assignment 2
 
-  $rows = $_POST['rows'];
-  $columns = $_POST['columns'];
-  ?>
+  $word = $_GET['word'];
+?>
 <!DOCTYPE html>
   <head>
     <meta charset="UTF-8">
@@ -18,50 +17,24 @@
       <h1>Richard Davis's Kung Fu Panda Po Magic Rectangle</h1>
     </header>
     <section>
-    <h3><?php echo "Po's magic rectangle has ".$rows." rows, and ".$columns." columns."; ?></h3>
-      <h4>Nested for loop rectangle</h4>
-      <p>
-        <?php
-          for ($i = 0; $i < $rows; $i++) {
-            for ($j = 0; $j < $columns; $j++) {
-              echo "F";
-            }
-            echo "<br>";
-          }
-        ?>
-      </p>
-      <h4>Nested while loop rectangle</h4>
-      <p>
-        <?php
-          $a = 1;
-          $b = 1;
-          while ($a <= $rows) {
-            while ($b <= $columns) {
-              echo "W,row".$a."col".$b."; ";
-              $b++;
-            }
-            echo "<br>";
-            $a++;
-            $b = 1;
-          }
-        ?>
-      </p>
-      <h4>Nested do...while loop rectangle</h4>
-      <p>
-        <?php
-          $x = 1;
-          $y = 1;
-          do {
-            do {
-              echo $x."x".$y."=".($x*$y)."; ";
-              $y++;
-            } while ($y <= $columns);
-            echo "<br>";
-            $x++;
-            $y = 1;
-          } while ($x <= $rows);
-        ?>
-      </p>
+      <h3>Po's Guess:</h3>
+      <h4><?php echo "You entered ".$word; ?></h4>
+      <?php
+        if (strlen($word) != 9 && strpos($word, "@") == false) {
+          echo "<p>\"".$word."\" does not contain exactly 9 characters.</p>";
+          echo "<p>\"".$word."\" does not contain any @ sign.</p>";
+          echo "<p>You cannot open the secret scroll. Please try again.</p>";
+        } elseif (strlen($word) != 9 && strpos($word, "@") != false) {
+          echo "<p>\"".$word."\" does not contain exactly 9 characters.</p>";
+          echo "<p>You cannot open the secret scroll. Please try again.</p>";
+        } elseif (strlen($word) == 9 && strpos($word, "@") == false) {
+          echo "<p>\"".$word."\" does not contain any @ sign.</p>";
+          echo "<p>You cannot open the secret scroll. Please try again.</p>";
+        } else {
+          echo "<p>\"".$word."\" contains exactly 9 characters and there is at least one @ sign.</p>";
+          echo "<p>Good job! You can open the secret scroll.</p>";
+        }
+      ?>
       <br>
       <a href="index.htm">Go back</a>
     </section>
