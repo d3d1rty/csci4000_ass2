@@ -1,4 +1,4 @@
-#Assignment 1 - CSCI 4000 (APSU)
+#Assignment 2 - CSCI 4000 (APSU)
 ##About
 This project is an assignment for CSCI 4000 course at APSU. Being this is an educational project for a grade, collaboration isn't exactly the goal here. But if you feel that you can benefit from perusing my code, go for it! 
 

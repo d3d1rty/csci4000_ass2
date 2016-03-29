@@ -14,12 +14,14 @@
     $over_hours = $hours - 40;
     $over_pay = $over_hours * $pay_rate * 1.5;
     $normal_pay = 40 * $pay_rate;
-    $gross = $normal_pay + $over_pay;
   } else {
     $over_hours = 0;
     $over_pay = 0;
-    $gross = $hours*$pay_rate;
+    $normal_pay = $hours*$pay_rate;
   }
+
+  // calculates gross
+  $gross = $normal_pay + $over_pay;
 
   // determine tax rate
   if ($dependents < 1) {
